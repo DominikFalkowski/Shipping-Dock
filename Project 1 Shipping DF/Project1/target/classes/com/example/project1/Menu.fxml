@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root prefHeight="400.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project1.HelloController">
+   <BorderPane prefHeight="400.0" prefWidth="600.0">
+      <center>
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="265.0" prefWidth="133.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="75.0" prefWidth="600.0" style="-fx-border-color: black; -fx-background-color: #4c9fb3;">
+               <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="91.0" prefWidth="682.0" text="The Containership Tracker" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+               </Label>
+            </HBox>
+         </AnchorPane>
+      </center>
+      <bottom>
+         <TabPane prefHeight="328.0" prefWidth="576.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <Tab style="-fx-background-color: #4c9fb3;" text="Main">
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="196.0" prefWidth="392.0" style="-fx-background-color: #817b84;">
+                  <TabPane layoutY="1.0" prefHeight="298.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                     <Tab text="Add Port">
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <Pane layoutX="4.0" layoutY="1.0" prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                              <TextArea fx:id="portList" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                              <TextField fx:id="portNameField" layoutX="48.0" layoutY="26.0" promptText="Port Name" />
+                              <TextField fx:id="portCodeField" layoutX="48.0" layoutY="63.0" promptText="Port Code" />
+                              <Button layoutX="100.0" layoutY="215.0" mnemonicParsing="false" onAction="#ResetButtonClick" text="Reset" />
+                              <Button layoutX="90.0" layoutY="134.0" mnemonicParsing="false" onAction="#onAddPortButtonCLick" text="Add Port" />
+                              <TextField fx:id="Pcounty" layoutX="48.0" layoutY="102.0" promptText="County" />
+                              <Button layoutX="82.0" layoutY="170.0" mnemonicParsing="false" onAction="#onPortUpdateButtonClicked" text="Update Port" />
+                           </Pane>
+                        </AnchorPane>
+                     </Tab>
+                     <Tab text="Delete Port">
+                        <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <TextArea fx:id="portList2" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                           <TextField fx:id="portNameField2" layoutX="48.0" layoutY="40.0" promptText="Port Name" />
+                           <Button layoutX="84.0" layoutY="102.0" mnemonicParsing="false" onAction="#onDeletePortButtonCLick" text="Delete Port" />
+                        </Pane>
+                     </Tab>
+                     <Tab text="Find Port">
+                        <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <TextArea fx:id="portList3" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                           <TextField fx:id="portNameField3" layoutX="48.0" layoutY="40.0" promptText="Port Name" />
+                           <TextField fx:id="portCodeField2" layoutX="48.0" layoutY="89.0" promptText="Port Code" />
+                           <Button layoutX="88.0" layoutY="182.0" mnemonicParsing="false" onAction="#findPortButtonClick" text="Find Port" />
+                        </Pane>
+                     </Tab>
+                     <Tab text="List Port">
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <TextArea fx:id="portList4" layoutX="93.0" layoutY="35.0" prefHeight="200.0" prefWidth="414.0" />
+                           <Text fill="WHITE" layoutX="230.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of Current Ports">
+                              <font>
+                                 <Font size="16.0" />
+                              </font>
+                           </Text>
+                        </Pane>
+                     </Tab>
+                  </TabPane>
+               </AnchorPane>
+            </Tab>
+            <Tab style="-fx-background-color: #4c9fb3;" text="Port">
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="196.0" prefWidth="392.0" style="-fx-background-color: #817b84;">
+                  <TabPane layoutY="1.0" prefHeight="298.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                     <Tab text="Add Containership">
+                        <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <TextArea fx:id="containerShipList" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                           <TextField fx:id="shipNameField" layoutX="48.0" layoutY="23.0" promptText="Ship Name" />
+                           <TextField fx:id="shipIdentifierField" layoutX="48.0" layoutY="70.0" promptText="Ship Identifier" />
+                           <TextField fx:id="flagStateField" layoutX="48.0" layoutY="114.0" promptText="Flag State" />
+                           <Button layoutX="90.0" layoutY="214.0" mnemonicParsing="false" onAction="#onAddContainerShipButtonCLick" text="Add Ship" />
+                           <Button layoutX="89.0" layoutY="146.0" mnemonicParsing="false" onAction="#onShoreOffShoreButtonClick" text="On Shore" />
+                           <Button layoutX="56.0" layoutY="180.0" mnemonicParsing="false" onAction="#onContainerShipUpdateButtonClicked" text="Update ContainerShip" />
+                        </Pane>
+                     </Tab>
+                     <Tab text="delete Containership">
+                        <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <TextArea fx:id="containerShipList2" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                           <TextField layoutX="48.0" layoutY="40.0" promptText="Ship Name" />
+                           <Button layoutX="84.0" layoutY="122.0" mnemonicParsing="false" onAction="#onDeleteContainerShipButtonCLick" text="Delete Ship" />
+                        </Pane>
+                     </Tab>
+                     <Tab text="Find Containership">
+                        <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <TextArea fx:id="containerShipList3" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                           <TextField layoutX="48.0" layoutY="40.0" promptText="Ship Name" />
+                           <Button layoutX="75.0" layoutY="160.0" mnemonicParsing="false" onAction="#findContainerShipButtonClick" text="Find Container" />
+                           <TextField layoutX="48.0" layoutY="89.0" promptText="Ship Name" />
+                        </Pane>
+                     </Tab>
+                     <Tab text="List Containerships">
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <TextArea fx:id="containerShipList4" layoutX="93.0" layoutY="35.0" prefHeight="200.0" prefWidth="414.0" />
+                           <Text fill="WHITE" layoutX="230.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of Current Ships">
+                              <font>
+                                 <Font size="16.0" />
+                              </font>
+                           </Text>
+                        </Pane>
+                     </Tab>
+                  </TabPane>
+               </AnchorPane>
+            </Tab>
+            <Tab style="-fx-background-color: #4c9fb3;" text="Containership">
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="196.0" prefWidth="392.0" style="-fx-background-color: #817b84;">
+                  <TabPane layoutY="1.0" prefHeight="298.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                     <Tab text="Add Container">
+                        <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <TextArea layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                           <TextField layoutX="48.0" layoutY="40.0" promptText="ContainerID" />
+                           <TextField layoutX="48.0" layoutY="89.0" promptText="Container Size" />
+                           <Button layoutX="89.0" layoutY="142.0" mnemonicParsing="false" text="On Shore" />
+                           <Button layoutX="75.0" layoutY="189.0" mnemonicParsing="false" text="Add Container" />
+                           <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                              <TextArea fx:id="containerList" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                              <TextField fx:id="containerIDField2" layoutX="48.0" layoutY="40.0" promptText="ContainerID" />
+                              <TextField fx:id="containerSizeField" layoutX="48.0" layoutY="89.0" promptText="Container Size" />
+                              <Button layoutX="75.0" layoutY="134.0" mnemonicParsing="false" onAction="#onAddContainerButtonCLick" text="Add Container" />
+                              <Button layoutX="67.0" layoutY="175.0" mnemonicParsing="false" onAction="#onContainerUpdateButtonClicked" text="Update Container" />
+                           </Pane>
+                        </Pane>
+                     </Tab>
+                     <Tab text="Delete Container">
+                        <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <TextArea fx:id="containerList2" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                           <TextField fx:id="containerIDField3" layoutX="48.0" layoutY="40.0" promptText="ContainerID" />
+                           <Button layoutX="76.0" layoutY="114.0" mnemonicParsing="false" onAction="#onDeleteContainerButtonCLick" text="Delete Container" />
+                        </Pane>
+                     </Tab>
+                     <Tab text="Find Container">
+                        <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <TextArea fx:id="containerList3" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                           <TextField fx:id="containerIDField" layoutX="48.0" layoutY="40.0" promptText="ContainerID" />
+                           <Button layoutX="76.0" layoutY="114.0" mnemonicParsing="false" onAction="#findContainerButtonClick" text="Find Container" />
+                        </Pane>
+                     </Tab>
+                     <Tab text="List Containers">
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <TextArea fx:id="containerList4" layoutX="93.0" layoutY="35.0" prefHeight="200.0" prefWidth="414.0" />
+                           <Text fill="WHITE" layoutX="210.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of Current Containers">
+                              <font>
+                                 <Font size="16.0" />
+                              </font>
+                           </Text>
+                        </Pane>
+                     </Tab>
+                  </TabPane>
+               </AnchorPane>
+            </Tab>
+            <Tab style="-fx-background-color: #4c9fb3;" text="Container">
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="196.0" prefWidth="392.0" style="-fx-background-color: #817b84;">
+                  <TabPane layoutY="1.0" prefHeight="298.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                     <Tab text="Add Pallet">
+                        <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <TextArea fx:id="palletList" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                           <TextField fx:id="descriptionOfGoodsField" layoutX="48.0" layoutY="26.0" promptText="Description of goods" />
+                           <TextField fx:id="quantityField" layoutX="48.0" layoutY="58.0" promptText="Quantity" />
+                           <TextField fx:id="totalWeightField" layoutX="48.0" layoutY="89.0" promptText="Total Weight" />
+                           <TextField fx:id="valueOfPalletField" layoutX="48.0" layoutY="122.0" promptText="Value" />
+                           <TextField fx:id="totalSizeField" layoutX="48.0" layoutY="153.0" promptText="Total Size" />
+                           <Button layoutX="87.0" layoutY="222.0" mnemonicParsing="false" onAction="#onAddPalletButtonCLick" text="Add Pallet" />
+                           <Button layoutX="78.0" layoutY="189.0" mnemonicParsing="false" onAction="#onPalletUpdateButtonClicked" text="Update Pallet" />
+                        </Pane>
+                     </Tab>
+                     <Tab text="Delete Pallet">
+                        <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <TextArea fx:id="palletList2" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                           <TextField fx:id="descriptionOfGoodsField2" layoutX="48.0" layoutY="38.0" promptText="Description of goods" />
+                           <Button layoutX="81.0" layoutY="114.0" mnemonicParsing="false" onAction="#onDeletePalletButtonCLick" text="Delete Pallet" />
+                        </Pane>
+                     </Tab>
+                     <Tab text="Find Pallet">
+                        <Pane prefHeight="267.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <TextArea fx:id="palletList3" layoutX="317.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                           <TextField fx:id="descriptionOfGoodsField3" layoutX="48.0" layoutY="38.0" promptText="Description of goods" />
+                           <Button layoutX="81.0" layoutY="114.0" mnemonicParsing="false" onAction="#findPalletButtonClick" text="Find Pallet" />
+                        </Pane>
+                     </Tab>
+                     <Tab text="List Pallets">
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <TextArea fx:id="palletList4" layoutX="93.0" layoutY="35.0" prefHeight="200.0" prefWidth="414.0" />
+                           <Text fill="WHITE" layoutX="230.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of Current Ships">
+                              <font>
+                                 <Font size="16.0" />
+                              </font>
+                           </Text>
+                        </Pane>
+                     </Tab>
+                  </TabPane>
+               </AnchorPane>
+            </Tab>
+         </TabPane>
+      </bottom>
+   </BorderPane>
+</fx:root>
